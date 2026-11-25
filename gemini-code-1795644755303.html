@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoStore | Tecnología y Computación Garantizada</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #2563eb;
+            --accent: #10b981;
+            --bg: #f8fafc;
+            --text: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Banner Demostración Académica */
+        .demo-banner { background: #e2e8f0; color: #0f172a; text-align: center; padding: 8px; font-size: 0.85rem; font-weight: 600; border-bottom: 1px solid #cbd5e1; }
+        
+        /* Navegación */
+        header { background: var(--primary); color: white; padding: 1rem 5%; position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; }
+        .logo span { color: var(--secondary); }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav a { color: #cbd5e1; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: white; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, #1e3a8a 100%); color: white; padding: 4rem 5%; text-align: center; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; color: #cbd5e1; }
+        .btn { background: var(--secondary); color: white; padding: 12px 28px; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.3s; }
+        .btn:hover { background: #1d4ed8; }
+
+        /* Catálogo */
+        .container { max-width: 1200px; margin: 3rem auto; padding: 0 5%; }
+        .section-title { text-align: center; font-size: 2rem; color: var(--primary); margin-bottom: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; display: flex; flex-direction: column; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); }
+        .card-img { background: #eff6ff; height: 160px; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+        .card-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+        .card p { font-size: 0.9rem; color: #64748b; margin-bottom: 1rem; }
+        .price { font-size: 1.4rem; font-weight: 700; color: var(--secondary); margin-bottom: 1rem; }
+        .badge { background: #dcfce7; color: #166534; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; margin-bottom: 8px; }
+
+        /* Contacto y Políticas */
+        .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; background: white; padding: 2.5rem; border-radius: 10px; border: 1px solid #e2e8f0; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--primary); }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+        .error-msg { color: #dc2626; font-size: 0.85rem; display: none; margin-top: 4px; }
+        .success-msg { background: #dcfce7; color: #166534; padding: 12px; border-radius: 6px; margin-top: 1rem; display: none; font-weight: 500; }
+
+        /* Footer */
+        footer { background: var(--primary); color: #cbd5e1; padding: 3rem 5% 1.5rem; margin-top: 4rem; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto 2rem; }
+        footer h4 { color: white; margin-bottom: 1rem; }
+        .copyright { text-align: center; border-top: 1px solid #334155; padding-top: 1.5rem; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; gap: 1rem; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="demo-banner">
+        🔒 SITIO DE DEMOSTRACIÓN ACADÉMICA - ULEAM | Información comercial ficticia con fines educativos.
+    </div>
+
+    <header>
+        <a href="#" class="logo">💻 Tecno<span>Store</span></a>
+        <nav>
+            <ul>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#privacidad">Privacidad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Equipamiento Tecnológico con Garantía Oficial</h1>
+        <p>Encuentra laptops, monitores y periféricos de alto rendimiento con respaldo técnico certificado y facturación electrónica transparente.</p>
+        <a href="#catalogo" class="btn">Explorar Catálogo</a>
+    </section>
+
+    <main class="container" id="catalogo">
+        <h2 class="section-title">Catálogo de Productos</h2>
+        <div class="grid">
+            <article class="card">
+                <div class="card-img">💻</div>
+                <div class="card-body">
+                    <div>
+                        <span class="badge">Garantía 12 meses</span>
+                        <h3>Laptop ProBook 15"</h3>
+                        <p>Procesador Intel Core i7, 16GB RAM DDR5, SSD NVMe 512GB, Pantalla Full HD antirreflejo.</p>
+                    </div>
+                    <div>
+                        <div class="price">$899.00 <small style="font-size:0.75rem; color:#64748b;">(Inc. IVA)</small></div>
+                        <button class="btn" style="width:100%" onclick="alert('Producto agregado al carrito de demostración.')">Consultar Disponibilidad</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">🖥️</div>
+                <div class="card-body">
+                    <div>
+                        <span class="badge">Garantía 12 meses</span>
+                        <h3>Monitor UltraWide 27"</h3>
+                        <p>Panel IPS 2K QHD, tasa de refresco 144Hz, 1ms de respuesta, puertos HDMI y DisplayPort.</p>
+                    </div>
+                    <div>
+                        <div class="price">$320.00 <small style="font-size:0.75rem; color:#64748b;">(Inc. IVA)</small></div>
+                        <button class="btn" style="width:100%" onclick="alert('Producto agregado al carrito de demostración.')">Consultar Disponibilidad</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">⌨️</div>
+                <div class="card-body">
+                    <div>
+                        <span class="badge">Garantía 6 meses</span>
+                        <h3>Teclado Mecánico RGB</h3>
+                        <p>Switches táctiles silenciosos, chasis de aluminio, distribución en español y cable trenzado.</p>
+                    </div>
+                    <div>
+                        <div class="price">$75.00 <small style="font-size:0.75rem; color:#64748b;">(Inc. IVA)</small></div>
+                        <button class="btn" style="width:100%" onclick="alert('Producto agregado al carrito de demostración.')">Consultar Disponibilidad</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">🎧</div>
+                <div class="card-body">
+                    <div>
+                        <span class="badge">Garantía 6 meses</span>
+                        <h3>Audífonos Studio ANC</h3>
+                        <p>Cancelación activa de ruido, Bluetooth 5.3, batería de 30 horas y micrófono integrado.</p>
+                    </div>
+                    <div>
+                        <div class="price">$110.00 <small style="font-size:0.75rem; color:#64748b;">(Inc. IVA)</small></div>
+                        <button class="btn" style="width:100%" onclick="alert('Producto agregado al carrito de demostración.')">Consultar Disponibilidad</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <section class="two-col" style="margin-top: 4rem;" id="contacto">
+            <div>
+                <h2 style="color: var(--primary); margin-bottom: 1rem;">Contáctanos</h2>
+                <p style="margin-bottom: 1.5rem; font-size: 0.95rem;">¿Tienes dudas sobre especificaciones técnicas? Escríbenos y un asesor te responderá en menos de 24 horas hábiles.</p>
+                
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" placeholder="Ej. Carlos Mendoza">
+                        <div class="error-msg" id="errNombre">Por favor, ingresa tu nombre (mínimo 3 caracteres).</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico *</label>
+                        <input type="email" id="correo" placeholder="Ej. usuario@ejemplo.com">
+                        <div class="error-msg" id="errCorreo">Ingresa un correo electrónico válido.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Consulta *</label>
+                        <textarea id="mensaje" rows="4" placeholder="Escribe tu consulta aquí..."></textarea>
+                        <div class="error-msg" id="errMensaje">El mensaje debe tener al menos 10 caracteres.</div>
+                    </div>
+                    <button type="submit" class="btn">Enviar Consulta</button>
+                    <div class="success-msg" id="successMsg">✅ Mensaje validado correctamente. Gracias por contactar a TecnoStore (Simulación).</div>
+                </form>
+            </div>
+
+            <div id="privacidad">
+                <h2 style="color: var(--primary); margin-bottom: 1rem;">Políticas de Privacidad y Seguridad</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>1. Protección de Datos:</strong> TecnoStore S.A. (Ficticio) cumple con la Ley Orgánica de Protección de Datos Personales. Los datos ingresados en el formulario se utilizan exclusivamente para responder consultas comerciales.</p>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>2. Seguridad en Transacciones:</strong> Nunca solicitamos contraseñas ni claves bancarias por correo electrónico o formularios no cifrados.</p>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;"><strong>3. Garantía y Devoluciones:</strong> Todos nuestros equipos cuentan con respaldo técnico local y derecho a devolución dentro de los primeros 15 días calendario.</p>
+                <div style="background: #f1f5f9; padding: 1rem; border-radius: 6px; font-size: 0.85rem;">
+                    <strong>Datos Comerciales Verificables:</strong><br>
+                    Razón Social: TecnoStore Ecuador S.A. (Demo)<br>
+                    RUC: 1399999999001<br>
+                    Dirección: Av. Malecón y Calle 15, Manta, Manabí.<br>
+                    Teléfono: (05) 262-0000 | Correo: soporte@tecnostore-demo.ec
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>TecnoStore</h4>
+                <p>Tu aliado confiable en soluciones informáticas y hardware profesional.</p>
+            </div>
+            <div>
+                <h4>Atención al Cliente</h4>
+                <p>Lunes a Viernes: 08:30 - 18:00</p>
+                <p>Sábados: 09:00 - 13:00</p>
+            </div>
+            <div>
+                <h4>Seguridad</h4>
+                <p>🔒 Conexión Cifrada TLS/SSL</p>
+                <p>✔️ Comercio Verificado (Demo)</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 TecnoStore Ecuador S.A. - Todos los derechos reservados. Sitio ficticio creado para práctica académica ULEAM.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let valid = true;
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
+
+            // Validar Nombre
+            if (nombre.length < 3) {
+                document.getElementById('errNombre').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('errNombre').style.display = 'none';
+            }
+
+            // Validar Correo
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(correo)) {
+                document.getElementById('errCorreo').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('errCorreo').style.display = 'none';
+            }
+
+            // Validar Mensaje
+            if (mensaje.length < 10) {
+                document.getElementById('errMensaje').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('errMensaje').style.display = 'none';
+            }
+
+            if (valid) {
+                document.getElementById('successMsg').style.display = 'block';
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>
