@@ -1,0 +1,155 @@
+HTML
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OfertasTech Express - LIQUIDACION TOTAL 90% DESCUENTO HOY!!!</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+        body { background-color: #fff0f0; color: #111; }
+
+        /* Barra Académica */
+        .edu-bar { background: #1e293b; color: #f8fafc; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.9rem; border-bottom: 3px solid #eab308; }
+        .btn-audit { background: #eab308; color: #000; border: none; padding: 8px 15px; font-weight: bold; border-radius: 5px; cursor: pointer; }
+
+        /* Alerta de urgencia parpadeante */
+        .urgent-banner { background: #dc2626; color: #fef08a; text-align: center; padding: 12px; font-weight: 900; font-size: 1.1rem; animation: blink 1s infinite; }
+        @keyframes blink { 50% { background: #991b1b; } }
+
+        header { background: #ffea00; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid #dc2626; flex-wrap: wrap; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #dc2626; text-shadow: 1px 1px 0px #000; }
+        .timer { background: #000; color: #00ff00; padding: 8px 15px; font-family: monospace; font-size: 1.2rem; font-weight: bold; border-radius: 5px; }
+
+        .promo-box { background: linear-gradient(45deg, #dc2626, #f97316); color: white; text-align: center; padding: 2.5rem 5%; margin: 15px auto; max-width: 1100px; border-radius: 12px; border: 4px dashed #fef08a; }
+        .promo-box h1 { font-size: 2.4rem; text-transform: uppercase; margin-bottom: 10px; }
+
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .card { background: white; border: 3px solid #dc2626; border-radius: 8px; padding: 15px; text-align: center; position: relative; box-shadow: 0 5px 15px rgba(220,38,38,0.2); }
+        .discount-tag { position: absolute; top: -10px; right: -10px; background: #dc2626; color: #fff; font-weight: 900; padding: 8px 12px; border-radius: 50%; transform: rotate(15deg); }
+        .old-price { text-decoration: line-through; color: #666; font-size: 1rem; }
+        .new-price { color: #dc2626; font-size: 2rem; font-weight: 900; margin: 5px 0; }
+        .stock-alert { color: #b91c1c; font-weight: bold; font-size: 0.85rem; margin-bottom: 10px; }
+        .buy-btn { background: #16a34a; color: white; border: none; padding: 12px; width: 100%; font-size: 1.1rem; font-weight: 900; border-radius: 5px; cursor: pointer; text-transform: uppercase; }
+        .buy-btn:hover { background: #15803d; }
+
+        /* Publicidad engañosa */
+        .fake-ad { background: #fef08a; border: 2px solid #ca8a04; padding: 15px; margin: 25px 0; text-align: center; font-weight: bold; border-radius: 8px; }
+
+        footer { background: #222; color: #999; padding: 20px 5%; margin-top: 30px; font-size: 0.8rem; }
+        
+        /* Estilos de auditoría */
+        .red-flag { outline: 4px solid #2563eb !important; position: relative; }
+        .audit-panel { display: none; background: #eff6ff; border: 2px solid #2563eb; padding: 20px; margin: 20px auto; max-width: 1100px; border-radius: 8px; color: #1e3a8a; }
+        .audit-panel h3 { margin-bottom: 10px; }
+        .audit-panel ul { margin-left: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="edu-bar">
+        <span>⚠️ <strong>SIMULACIÓN EDUCATIVA DE PHISHING/FRAUDE (ULEAM)</strong> - No recopila datos reales.</span>
+        <button class="btn-audit" onclick="toggleAudit()">🔍 Mostrar/Ocultar Señales de Alerta</button>
+    </div>
+
+    <div class="audit-panel" id="auditPanel">
+        <h3>🚩 Señales de Alerta Identificadas en esta Página:</h3>
+        <ul>
+            <li><strong>Descuentos irreales (90%):</strong> Ninguna tienda tecnológica vende equipos nuevos de gama alta al 10% de su valor real.</li>
+            <li><strong>Falsa urgencia psicológica:</strong> Reloj en cuenta regresiva y mensajes de "Última unidad" para evitar que el usuario piense o investigue.</li>
+            <li><strong>Errores ortográficos y gramaticales:</strong> Uso de palabras mal escritas ("conputadora", "ofertas inperdibles", "garantia de fabrica sin resivo").</li>
+            <li><strong>Ausencia de identidad comercial:</strong> No existe RUC, dirección física real, ni razón social verificable.</li>
+            <li><strong>Contacto poco claro:</strong> Solo ofrece un correo gratuito genérico (`ventas_baratas99@mailfalso.com`) sin teléfono fijo.</li>
+            <li><strong>Políticas de privacidad incompletas:</strong> Un párrafo ambiguo que exime de responsabilidad y no protege datos.</li>
+            <li><strong>Publicidad engañosa (Clickbait):</strong> Banner falso indicando que ganaste un premio para inducir clics maliciosos.</li>
+        </ul>
+    </div>
+
+    <div class="urgent-banner flag-target">
+        🚨 ¡¡¡ATENCIÓN!!! LIQUIDASION POR CIERRE DE BODEGA - TODO AL 90% DE DESCUENTO SOLO POR HOY 🚨
+    </div>
+
+    <header>
+        <div class="logo">⚡ OfertasTech Express ⚡</div>
+        <div class="timer flag-target">LA OFERTA TERMINA EN: <span id="countdown">04:59</span></div>
+    </header>
+
+    <div class="promo-box flag-target">
+        <h1>¡CONPUTADORAS Y CELULARES CASI REGALADOS!</h1>
+        <p>Aprovecha estas ofertas inperdibles antes que se agoten. Envio gratis a todo el pais sin inportar donde vivas.</p>
+    </div>
+
+    <main class="container">
+        <div class="fake-ad flag-target">
+            🎉 ¡FELICIDADES VISITANTE #1000! HAS SIDO SELECCIONADO PARA RECLAMAR UN IPHONE GRATIS. HAZ CLIC AQUÍ PARA RECLAMAR AHORA >>>
+        </div>
+
+        <div class="grid">
+            <div class="card flag-target">
+                <div class="discount-tag">-90%</div>
+                <div style="font-size: 4rem;">💻</div>
+                <h3>Laptop Gamer Ultra Pro i9</h3>
+                <p style="font-size: 0.85rem; color: #444;">La mejor conputadora para juegos y trabajo pesado.</p>
+                <div class="old-price">Antes: $1,500.00</div>
+                <div class="new-price">$150.00</div>
+                <div class="stock-alert">🔥 ¡Solo queda 1 unidad disponible! (45 personas viendo esto)</div>
+                <button class="buy-btn" onclick="alert('⚠️ ALERTA EDUCATIVA: En un sitio real, este botón te redirigiría a una pasarela falsa para robar tu tarjeta de crédito.')">COMPRAR YA MISMO</button>
+            </div>
+
+            <div class="card flag-target">
+                <div class="discount-tag">-92%</div>
+                <div style="font-size: 4rem;">📱</div>
+                <h3>Teléfono Inteligente 5G Max</h3>
+                <p style="font-size: 0.85rem; color: #444;">Camara profesional de 200mp, nuevesito en caja.</p>
+                <div class="old-price">Antes: $1,200.00</div>
+                <div class="new-price">$95.00</div>
+                <div class="stock-alert">🔥 ¡Últimos 2 en inventario!</div>
+                <button class="buy-btn" onclick="alert('⚠️ ALERTA EDUCATIVA: Nunca compres en sitios con descuentos irreales y sin respaldo legal.')">COMPRAR YA MISMO</button>
+            </div>
+
+            <div class="card flag-target">
+                <div class="discount-tag">-90%</div>
+                <div style="font-size: 4rem;">⌚</div>
+                <h3>Reloj Inteligente Deportivo</h3>
+                <p style="font-size: 0.85rem; color: #444;">Resistente al agua, bateria dura 1 mes entero.</p>
+                <div class="old-price">Antes: $250.00</div>
+                <div class="new-price">$25.00</div>
+                <div class="stock-alert">🔥 ¡Oferta relámpago!</div>
+                <button class="buy-btn" onclick="alert('⚠️ ALERTA EDUCATIVA: Este sitio carece de políticas de devolución y RUC.')">COMPRAR YA MISMO</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="flag-target">
+        <p><strong>Contacto:</strong> Escribenos a ventas_baratas99@mailfalso.com (No atendemos llamadas).</p>
+        <p style="margin-top: 8px;"><strong>Politicas de privasidad:</strong> Al entrar aqui aceptas todo. No hacemos devolusiones de dinero ni damos garantia de fabrica sin resivo.</p>
+        <p style="margin-top: 8px;">OfertasTech Express - Todos los derechos.</p>
+    </footer>
+
+    <script>
+        // Temporizador de falsa urgencia
+        let time = 299;
+        setInterval(() => {
+            if (time > 0) time--;
+            let mins = Math.floor(time / 60);
+            let secs = time % 60;
+            document.getElementById('countdown').textContent = 
+                `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }, 1000);
+
+        // Función para resaltar señales de fraude
+        function toggleAudit() {
+            const panel = document.getElementById('auditPanel');
+            const targets = document.querySelectorAll('.flag-target');
+            const isHidden = panel.style.display === 'none' || panel.style.display === '';
+            
+            panel.style.display = isHidden ? 'block' : 'none';
+            targets.forEach(el => {
+                if (isHidden) el.classList.add('red-flag');
+                else el.classList.remove('red-flag');
+            });
+        }
+    </script>
+</body>
+</html>
